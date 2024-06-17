@@ -3800,7 +3800,6 @@ action_a = {
 name = " Great!"
 
 command = { type = addcore which = 300 }
-command = { type = addcore which = 301 }
 command = { type = addcore which = 238 }
 command = { type = addcore which = 240 }
 command = { type = addcore which = 239 }
