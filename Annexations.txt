@@ -35,7 +35,6 @@ control = { province = 390 data = -1 } #Lugano
 control = { province = 391 data = -1 } #Geneva
 control = { province = 392 data = -1 } #Bern
 }
-}
 
 trigger = {
 NOT = {
