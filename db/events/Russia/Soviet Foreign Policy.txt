@@ -248,11 +248,11 @@ command = { type = setflag which = SOV_ISO }
 
 action_b = {
 ai_chance = 50
-name = "All rightful Russian lands must be ours!"
+name = "All rightfull russian lands must be ours!"
 command = { type = set_domestic which = interventionism value = 7 }
 command = { type = setflag which = SOV_RCL }
 command = { type = ai which = "Kaiserreich/switch/SOV_MINOR_ATTACK.ai"  }
-# Tran-Siberian railroad
+# Transiberian railroad
 command = { type = addclaim which = 1167 }
 command = { type = addclaim which = 1168 }
 command = { type = addclaim which = 1169 }
@@ -389,6 +389,8 @@ command = { type = addclaim which = 663  }
 command = { type = addclaim which = 661  }
 command = { type = addclaim which = 694  }
 command = { type = addclaim which = 693  }
+command = { type = addclaim which = 653  }
+command = { type = addclaim which = 655  }
 #Sarny, Lutsk, Rowne, Segezha and Kestenga provinces
 command = { type = addclaim which = 249  } #Sarny
 command = { type = addclaim which = 245  } #Lutsk
@@ -403,7 +405,7 @@ name = "It is time to liberate the oppressed of Eurasia!"
 command = { type = set_domestic which = interventionism value = 9 }
 command = { type = setflag which = SOV_EXP }
 command = { type = ai which = "kaiserreich/switch/SOV_MINOR_ATTACK.ai" }
-# Tran-Siberian railroad
+# Transiberian railroad
 command = { type = addclaim which = 1167 }
 command = { type = addclaim which = 1168 }
 command = { type = addclaim which = 1169 }
@@ -539,6 +541,8 @@ command = { type = addclaim which = 663  }
 command = { type = addclaim which = 661  }
 command = { type = addclaim which = 694  }
 command = { type = addclaim which = 693  }
+command = { type = addclaim which = 653  }
+command = { type = addclaim which = 655  }
 # As above plus....
 # Mongolia
 command = { type = addclaim which = 1124 }
@@ -800,7 +804,7 @@ ispuppet = SOV
 }
 
 name = "Relations with Siberia"
-desc = "Unable to cope with Russian oppression, the Siberian national assembly has declared its independence from Russia. Now that the days of the Russian government are numbered we must decide whether we should bring the revolution to Siberia or recognize their independence in exchange for their help?"
+desc = "Unable to cope with Russian oppression, the Siberian national assembly has declared its independance from Russia. Now that the days of the Russian government are numbered we must decide whether we should bring the revolution to Siberia or recognize their independence in exchange for their help?"
 
 
 date = { day = 1 month = january year = 1936 }
@@ -1350,7 +1354,7 @@ command = { type = removeclaim which = 1219   }
 command = { type = independence which = MAN value = 1 when = 0 }
 command = { type = make_puppet which = MAN }
 command = { type = sleepevent which = 753805 }
-command = { type = trigger which = 889186 } 
+
 }
 
 action_b = {
@@ -1511,36 +1515,6 @@ command = { type = dissent value = 5 }
 }
 }
 
-event = {
-id = 889186
-country = MAN
-picture= "gerarmedfor"
-persistent = yes
-style = 2
-
-name= "Independent Manchuria" #Soviet Puppet Manchuria 
-desc= "Our Russian overlords have installed a new government to supervise our internal development."
-
-
-
-action_a = {
-name = "Still better than an occupation!"
-
-command = { type = ai which = "kaiserreich/Fengtian.ai" }
-command = { trigger = { event = 753804 }  type = add_division value = infantry when = 9 }
-command = { trigger = { event = 753804 }  type = add_division value = infantry when = 9 }
-command = { trigger = { event = 753804 }  type = add_division value = infantry when = 9 }
-command = { trigger = { event = 753804 }  type = add_division value = infantry when = 9 }
-command = { trigger = { event = 753804 }  type = add_division value = cavalry when = 8 }
-command = { trigger = { event = 753804 }  type = add_division value = cavalry when = 8 }
-command = { type = add_division value = interceptor when = 8 }
-command = { type = name where = MAN which = MAN_RUS_NAME }
-command = { type = flag_ext where = MAN which = "_SOV" }
-command = { type = set_relation which = SOV value = 150 }
-command = { type = set_relation which = CGX value = -50 }
-}
-}
-
 
 event = {
 id = 753806
@@ -1673,7 +1647,7 @@ command = { type = sleepevent which = 753808 }
 
 action = {
 ai_chance = 40
-name = "Restore independent Sinkiang!"
+name = "Restore independent Sinkiang !"
 command = { type = removeclaim which = 1281 }
 command = { type = removeclaim which = 1273 }
 command = { type = removeclaim which = 1280 }
@@ -1740,7 +1714,7 @@ control = { province = 1284 data = SOV }
 }
 }
 ai_chance = 60
-name = "Integrate Sinkiang!"
+name = "Integrate Sinkiang !"
 command = { type = belligerence value = 5 }
 command = { type = addclaim which = 1281 }
 command = { type = addclaim which = 1273 }
@@ -2017,29 +1991,12 @@ command = { type = addcore which = 1541 }
 command = { type = addcore which = 1542 }
 command = { type = addcore which = 1543 }
 command = { type = dissent value = 3 }
-command = { trigger = { country = RUS } type = waketeam which = 7249 when = 1 } #Mikhail Diterikhs
 command = { trigger = { country = SOV } type = wakeleader which = 10800 }
-command = { trigger = { country = RUS } type = wakeminister which = 4600 }
-command = { trigger = { country = RUS } type = wakeminister which = 4601 }
-command = { trigger = { country = RUS } type = wakeminister which = 4602 }
-command = { trigger = { country = RUS } type = wakeminister which = 4603 }
-command = { trigger = { country = RUS } type = wakeminister which = 4604 }
-command = { trigger = { country = RUS } type = wakeminister which = 4605 }
-command = { trigger = { country = RUS } type = wakeminister which = 4606 }
-command = { trigger = { country = RUS } type = wakeminister which = 4607 }
-command = { trigger = { country = RUS } type = wakeminister which = 4608 }
-command = { trigger = { country = RUS } type = wakeminister which = 4609 }
-command = { trigger = { country = RUS } type = wakeminister which = 4610 }
-command = { trigger = { country = RUS } type = wakeminister which = 4611 }
-command = { trigger = { country = RUS } type = wakeminister which = 4612 }
-command = { trigger = { country = RUS } type = wakeminister which = 4613 }
-command = { trigger = { country = RUS } type = wakeminister which = 4614 }
-command = { trigger = { country = RUS } type = wakeminister which = 4615 }
-command = { trigger = { country = RUS } type = wakeminister which = 4616 }
-command = { trigger = { country = RUS } type = wakeminister which = 4617 }
-command = { trigger = { country = RUS } type = wakeminister which = 4618 }
-command = { trigger = { country = RUS } type = wakeminister which = 4619 }
-command = { trigger = { country = RUS } type = wakeminister which = 4620 }
+command = { trigger = { country = RUS } type = wakeminister which = 4440 }
+command = { trigger = { country = RUS } type = wakeminister which = 4441 }
+command = { trigger = { country = RUS } type = wakeminister which = 4442 }
+command = { trigger = { country = RUS } type = wakeminister which = 4443 }
+command = { trigger = { country = RUS } type = wakeminister which = 4444 }
 command = { trigger = { country = RUS } type = wakeleader which = 500860 }
 command = { trigger = { country = RUS } type = wakeleader which = 500861 }
 command = { trigger = { country = RUS } type = wakeleader which = 500862 }
@@ -2066,10 +2023,7 @@ command = { trigger = { country = RUS } type = wakeleader which = 500882 }
 command = { trigger = { country = RUS } type = wakeleader which = 500883 }
 command = { trigger = { country = RUS } type = wakeleader which = 500884 }
 command = { trigger = { country = RUS } type = wakeleader which = 500885 }
-command = { trigger = { country = RUS } type = wakeleader which = 500886 }
-command = { trigger = { country = RUS } type = wakeleader which = 500887 }
-command = { trigger = { country = RUS } type = wakeleader which = 500888 }
-
+command = { trigger = { country = RUS } type = waketeam which = 7249 when = 1 } #Mikhail Diterikhs
 }
 }
 
@@ -2629,6 +2583,7 @@ command = { type = addcore which = 268 }
 command = { type = addcore which = 269 }
 command = { type = addcore which = 264 }
 command = { type = addcore which = 267 }
+command = { type = addcore which = 266 }
 command = { type = addcore which = 265 }
 command = { type = addcore which = 273 }
 command = { type = addcore which = 272 }
@@ -2758,6 +2713,8 @@ command = { type = addcore which = 240 }
 command = { type = addcore which = 239 }
 command = { type = addcore which = 241 }
 command = { type = addcore which = 242 }
+command = { type = addcore which = 213 }
+command = { type = addcore which = 215 }
 command = { type = dissent value = 3 }
 }
 }
@@ -3237,7 +3194,7 @@ picture = "Kazakhstan2"
 country = KAZ
 style = 2
 
-name = "Soviet Russia is stirring up separatism!"
+name = "Soviet Russia is stirring up seperatism!"
 desc = "The resurgent Soviet Russia is encouraging our ethnic Russian community to secede from our country and be incorporated into their state.  What shall we do?"
 
 
@@ -4020,7 +3977,7 @@ command = { type = removecore which = 1119 }
 
 action_b = {
 ai_chance = 90
-name = "Mobilize, Siberia is ours!"
+name = "Mobilise, Siberia is ours!"
 command = { type = add_division value = cavalry when = 6 }
 command = { type = add_division value = cavalry when = 6 }
 command = { type = add_division value = cavalry when = 6 }
@@ -4988,7 +4945,7 @@ command = { type = belligerence value = 5 }
 }
 }
 
-# Soviet annexations
+# Soviet annexions
 event = {
 id = 889092
 country = JAP
@@ -4996,7 +4953,7 @@ style = 2
 picture = "japsun"
 
 name = "Peace With the Soviets"
-desc = "Now it is time to fulfill our conditions."
+desc = "Now it is time to fullfill our conditions."
 
 action_a = {
 name = "Transfer the territories."
@@ -5261,7 +5218,7 @@ offset = 5
 deathdate = { day = 29 month = september year = 1960 }
 
 name = "Soviets conquered Mukden"
-desc = "The Soviet state has launched a successful invasion of our country and there is nothing we can do to stop their relentless advance. Most of our commanders suggest that we offer the Soviets an unconditional surrender to prevent more useless deaths."
+desc = "The Soviet state has launched a succesful invasion of our country and there is nothing we can do to stop their relentless advance. Most of our commanders suggest that we offer the Soviets an unconditional surrender to prevent more useless deaths."
 
 action_a = {
 ai_chance = 100
@@ -5329,7 +5286,7 @@ offset = 5
 deathdate = { day = 29 month = september year = 1960 }
 
 name = "Hopeless war"
-desc = "The Soviet state has launched a successful invasion of our country and there is nothing we can do to stop their relentless advance. Most of our commanders suggest that we offer the Soviets an unconditional surrender to prevent more useless deaths."
+desc = "The Soviet state has launched a succesful invasion of our country and there is nothing we can do to stop their relentless advance. Most of our commanders suggest that we offer the Soviets an unconditional surrender to prevent more useless deaths."
 
 action_a = {
 ai_chance = 100
@@ -5353,7 +5310,7 @@ style = 2
 picture = "Japan_Occupation2"
 
 name = "Defeat of Transamur"
-desc = "Kolchak realised that further resistance against us was hopeless. He was left no other choice but to sign the unconditional surrender of his rebellious state."
+desc = "Kolchak realized that further resistance against us was hopeless. He was left no other choice but to sign the unconditional surrender of his rebellious state."
 
 action_a = {
 ai_chance = 5
@@ -5600,7 +5557,7 @@ command = { type = removeclaim which = 1171 }
 command = { type = removeclaim which = 1161 }
 command = { type = sleepleader which = 330025 }
 command = { type = sleepteam which = 6802 } #Roman von Ungern-Sternberg
-command = { type = sleepteam which = 6801 } #Mongol Tran-Siberian Rail Company
+command = { type = sleepteam which = 6801 } #Mongol Transiberian Rail Company
 command = { type = sleepteam which = 6803 } #Ulan-Ude Aviation Plant
 command = { type = sleepteam which = 6806 } #Verkhneudinsk Locomotive Plant
 command = { type = sleepteam which = 6810 } #Chita Electromechanical Plant
@@ -5782,10 +5739,10 @@ exists = RUS
 flag = SOV_ISO
 alliance = { country = FIN country = GER }
 }
-control = { province = 553 data = SOV } #Petrograd
-control = { province = 572 data = SOV } #Moscow
-control = { province = 532 data = FIN } #Sortavala
-control = { province = 531 data = FIN } #Viipuri
+control = { province = 553 data = SOV }
+control = { province = 572 data = SOV }
+control = { province = 538 data = FIN }
+control = { province = 531 data = FIN }
 }
 
 decision_trigger = {
@@ -5800,10 +5757,10 @@ exists = RUS
 flag = SOV_ISO
 alliance = { country = FIN country = GER }
 }
-control = { province = 553 data = SOV } #Petrograd
-control = { province = 572 data = SOV } #Moscow
-control = { province = 532 data = FIN } #Sortavala
-control = { province = 531 data = FIN } #Viipuri
+control = { province = 553 data = SOV }
+control = { province = 572 data = SOV }
+control = { province = 538 data = FIN }
+control = { province = 531 data = FIN }
 }
 
 name = "Status of Karelia"
@@ -6156,7 +6113,7 @@ alliance = { country = SOV country = OTT }
 }
 
 name = "Security of the Eastern border"
-desc = "The Soviet state recapturing positions in the Caucasus, previously held by the Russian Empire, has led to a rise of Arabian nationalism originating from Egypt and Hashemite Arabia. Our state and its foreign interests are in grave danger. We must quickly stabilize our eastern borders if we hope to survive the approaching struggle with the hostile Arabian states. The Sultan is planning to send Prince Nihad to propose a non-aggression treaty with the Soviet state."
+desc = "The Soviet state recapturing positions in the Caucasus, previously held by the Russian Empire, has led to a rise of Arabian nationalism originating from Egypt and Hashemite Arabia. Our state and its foreign interests are in grave danger. We must quickly stabilise our eastern borders if we hope to survive the approaching struggle with the hostile Arabian states. The Sultan is planning to send Prince Nihad to propose a non-aggression treaty with the Soviet state."
 
 date = { day = 1 month = april year = 1937 }
 offset = 2
@@ -6183,7 +6140,7 @@ country = SOV
 style = 2
 picture = "Sovturpact"
 
-name = "Non-Aggression pact with Ottomans"
+name = "Non-Agression pact with Ottomans"
 desc = "Our recent achievments in the Caucasus, namely the incorporation of Georgia, greatly disturbed the Ottoman Empire. Prince Nihad recently arrived into our capital with the proposal of a non-aggression pact between our nations in which either side recognizes the current borders between the Ottoman Empire and the Soviet state. How shall we respond to this proposal?"
 
 action_a = {
@@ -6218,7 +6175,7 @@ country = OTT
 style = 2
 picture = "Sovturpact"
 
-name = "Non-Aggression pact with Soviets was signed"
+name = "Non-Agression pact with Soviets was signed"
 desc = "The airplane of Prince Nihad recently landed in Istanbul. The Prince announced that the non-aggression pact with the Soviet government was signed. The eastern border of our empire is now secure!"
 
 action_a = {
@@ -6234,7 +6191,7 @@ country = OTT
 style = 2
 picture = "Sovturpact"
 
-name = "Non-Aggression pact with Soviets"
+name = "Non-Agression pact with Soviets"
 desc = "The Soviet state agrees to sign the pact but they demand the inclusion of our buffer-state Armenia into the deal so that it falls in the Soviet sphere of influence."
 
 action_a = {
@@ -6262,7 +6219,7 @@ style = 2
 picture = "Sovturpact"
 
 name = "The non-aggression pact with the Ottomans was signed"
-desc = "The Ottoman Empire has agreed to include Armenia into our sphere of influence. We have successfully eliminated the probability of war with the Ottoman Empire, thus freeing our hands to deal with more serious threats to our security in the process. It`s a grand success of Soviet diplomacy!"
+desc = "The Ottoman Empire has agreed to include Armenia into our sphere of influence. We have succesfully eliminated the probability of war with the Ottoman Empire, thus freeing our hands to deal with more serious threats to our security in the process. It`s a grand success of Soviet diplomacy!"
 
 action_a = {
 name = "Hooray!"
@@ -6991,7 +6948,7 @@ puppet = { country = U43 country = SOV  }
 }
 
 name = "Mountain republic and Ali Mitayev"
-desc = "With the stabilization of our motherland we can now start looking beyond our borders. To the south lies the pseudo-capitalist Mountain republic led by Caucasian nationalists. Ali Mitayev, the Chechen sheikh from the Mountainous republic has petitioned our government to instigate a coup in the Mountain Republic by using his significant influence amongst local population. Shall we offer him our support?"
+desc = "With the stabilization of our motherland we can now start looking beyond our borders. To the south lies the pseudo-capitalist Mountain republic led by Caucasian nationalists. Ali Mitayev, the Chechen sheikh from the Mountainous republic has petitioned our government to instigate a coup in the Mountain Republic by using his significant influence amongst local population. Shall we offer him our support ?"
 
 date = { day = 1 month = july year = 1937 }
 offset = 30
@@ -7020,7 +6977,7 @@ style = 2
 picture = "urbanwarfare1"
 
 name = "Soviet coup"
-desc = "Soviet agitators, together with detachments of rebellious mountaineers lead by Ali Mitayev, have turned part of popular opinion against our regime. Russians, both in the countryside and in the cities, have rebelled. The country is in chaos. Can we resist the opposition?"
+desc = "Soviet agitators, together with detachments of rebellious mountaineers lead by Ali Mitayev, have turned part of popular opinion against our regime. Russians, both in the countryside and in the cities, have rebelled. The country is in chaos. Can we resist the opposition ?"
 
 action_a = {
 ai_chance = 35
@@ -7132,7 +7089,7 @@ government = communist
 }
 
 name = "Soviet expansionism threatens Commonwealth"
-desc = "Recent resurgence of the Soviet state in the east together with recent soviet diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. However doing will mean definite military involvement of our state in any potential conflict in the western Europe and may further worsen our relations with Soviet Russia. What shall we do?"
+desc = "Recent reassurgence of the Soviet state in the east together with recent soviet diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. Hovewer doing will mean definite military involvement of our state in any potential conflict in the western europe and may further worsen our relations with Soviet Russia. What shall we do ?"
 picture = "diplomatic_campaign"
 
 date = { day = 1 month = january year = 1936 }
@@ -7167,7 +7124,7 @@ style = 2
 picture = "diplomatic_campaign"
 
 name = "Commonwealth wants to join Mitteleuropa"
-desc = "Government of Commonwealth, afraid of recent aggressive Soviet foreign policy has announced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Commonwealth to join our alliance and protect them from potential Bolshevik diplomatic and economical offensive?"
+desc = "Government of Commonwealth, afraid of recent agressive soviet foreign policy has annouced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Commonwealth to join our alliance and protect them from potential Bolshevik diplomatic and economical offensive ?"
 
 action_a = {
 ai_chance = 70
@@ -7205,10 +7162,10 @@ style = 2
 picture = "diplomatic_campaign"
 
 name = "Commonwealth joins Mitteleuropa"
-desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerful German armed forces."
+desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerfull German armed forces."
 
 action_a = {
-name = "Now our independence is secured!"
+name = "Now our independence is secured !"
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
 command = { type = relation which = SOV value = -150 }
@@ -7274,7 +7231,7 @@ government = communist
 }
 
 name = "Soviet expansionism threatens Poland"
-desc = "Recent resurgence of the Soviet state in the east together with recent soviet diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. However doing will mean definite military involvement of our state in any potential conflict in the western Europe and may further worsen our relations with Soviet Russia. What shall we do?"
+desc = "Recent reassurgence of the Soviet state in the east together with recent soviet diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. Hovewer doing will mean definite military involvement of our state in any potential conflict in the western europe and may further worsen our relations with Soviet Russia. What shall we do ?"
 picture = "diplomatic_campaign"
 
 date = { day = 1 month = january year = 1936 }
@@ -7309,7 +7266,7 @@ style = 2
 picture = "diplomatic_campaign"
 
 name = "Poland wants to join Mitteleuropa"
-desc = "Government of Poland, afraid of recent aggressive Soviet foreign policy has announced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Poland to join our alliance and protect them from potential Bolshevik diplomatic and economical offensive?"
+desc = "Government of Poland, afraid of recent agressive soviet foreign policy has annouced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Poland to join our alliance and protect them from potential Bolshevik diplomatic and economical offensive ?"
 
 action_a = {
 ai_chance = 70
@@ -7347,10 +7304,10 @@ style = 2
 picture = "diplomatic_campaign"
 
 name = "Poland joins Mitteleuropa"
-desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerful German armed forces."
+desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerfull German armed forces."
 
 action_a = {
-name = "Now our independence is secured!"
+name = "Now our independence is secured !"
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
 command = { type = relation which = SOV value = -150 }
@@ -7415,7 +7372,7 @@ government = communist
 }
 
 name = "Soviet expansionism threatens Finland"
-desc = "Recent resurgence of the Soviet state in the east together with recent soviet diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. However doing will mean definite military involvement of our state in any potential conflict in the western Europe and may further worsen our relations with Soviet Russia. What shall we do?"
+desc = "Recent reassurgence of the Soviet state in the east together with recent soviet diplomatic activity through the eastern Europe proves, that in order to keep our state, its independence and its borders intact, we need to gain protection of German Empire and Mitteleuropa alliance. Hovewer doing will mean definite military involvement of our state in any potential conflict in the western europe and may further worsen our relations with Soviet Russia. What shall we do ?"
 picture = "diplomatic_campaign"
 
 date = { day = 1 month = january year = 1936 }
@@ -7450,7 +7407,7 @@ style = 2
 picture = "diplomatic_campaign"
 
 name = "Finland wants to join Mitteleuropa"
-desc = "Government of Finland, afraid of recent aggressive Soviet foreign policy has announced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Finland to join our alliance and protect them from potential Bolshevik diplomatic and economical offensive?"
+desc = "Government of Finland, afraid of recent agressive soviet foreign policy has annouced recently that they want to join Mitteleuropa alliance. It's not a sudden move because pro-German policy is popular in many circles including the ruling cabinet and army. Do we want to allow Finland to join our alliance and protect them from potential Bolshevik diplomatic and economical offensive ?"
 
 action_a = {
 ai_chance = 70
@@ -7488,10 +7445,10 @@ style = 2
 picture = "diplomatic_campaign"
 
 name = "Finland joins Mitteleuropa"
-desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerful German armed forces."
+desc = "Germans accepted our offer and invited us into Mitteleuropa alliance. Now our independence and territorial integrity are protected by powerfull German armed forces."
 
 action_a = {
-name = "Now our independence is secured!"
+name = "Now our independence is secured !"
 command = { type = relation which = FRA value = -150 }
 command = { type = relation which = ENG value = -150 }
 command = { type = relation which = SOV value = -150 }
@@ -7518,5 +7475,3 @@ command = { type = end_trades which = SOV where = FIN }
 #maybe new ai?
 }
 }
-
-
