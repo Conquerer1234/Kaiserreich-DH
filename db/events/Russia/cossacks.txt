@@ -2013,6 +2013,8 @@ ispuppet = TRA
 }
 
 decision_trigger = {
+control = { province = 653 data = TRA }
+control = { province = 655 data = TRA }
 control = { province = 644 data = TRA }
 control = { province = 697 data = TRA }
 control = { province = 699 data = TRA }
@@ -2064,6 +2066,8 @@ NOT = {
 atwar = TRA
 ispuppet = TRA
 }
+control = { province = 653 data = TRA }
+control = { province = 655 data = TRA }
 control = { province = 644 data = TRA }
 control = { province = 697 data = TRA }
 control = { province = 699 data = TRA }
@@ -2113,6 +2117,8 @@ trigger = {
 event = { id = 750388 days = 250 }
 local_flag = TRAost_const
 alliance = { country = TRA country = GER }
+control = { province = 653 data = TRA }
+control = { province = 655 data = TRA }
 control = { province = 644 data = TRA }
 control = { province = 697 data = TRA }
 control = { province = 699 data = TRA }
@@ -2140,6 +2146,8 @@ deathdate = { day = 29 month = december year = 1963 }
 action_a = {
 name = "Further improve our defenses!"
 ai_chance = 100
+command = { type = construct which = land_fort where = 653 value = 1 }
+command = { type = construct which = land_fort where = 655 value = 1 }
 command = { type = construct which = land_fort where = 644 value = 1 }
 command = { type = construct which = land_fort where = 697 value = 1 }
 command = { type = construct which = land_fort where = 699 value = 1 }
@@ -2173,6 +2181,8 @@ trigger = {
 event = { id = 750389 days = 250 }
 local_flag = TRAost_const
 alliance = { country = TRA country = GER }
+control = { province = 653 data = TRA }
+control = { province = 655 data = TRA }
 control = { province = 644 data = TRA }
 control = { province = 697 data = TRA }
 control = { province = 699 data = TRA }
@@ -2200,6 +2210,8 @@ deathdate = { day = 29 month = december year = 1963 }
 action_a = {
 name = "Further improve our defenses!"
 ai_chance = 80
+command = { type = construct which = land_fort where = 653 value = 1 }
+command = { type = construct which = land_fort where = 655 value = 1 }
 command = { type = construct which = land_fort where = 644 value = 1 }
 command = { type = construct which = land_fort where = 697 value = 1 }
 command = { type = construct which = land_fort where = 699 value = 1 }
@@ -2232,6 +2244,8 @@ trigger = {
 event = { id = 750390 days = 250 }
 local_flag = TRAost_const
 alliance = { country = TRA country = GER }
+control = { province = 653 data = TRA }
+control = { province = 655 data = TRA }
 control = { province = 644 data = TRA }
 control = { province = 697 data = TRA }
 control = { province = 699 data = TRA }
@@ -2259,6 +2273,8 @@ deathdate = { day = 29 month = december year = 1963 }
 action_a = {
 name = "Further improve our defenses!"
 ai_chance = 50
+command = { type = construct which = land_fort where = 653 value = 1 }
+command = { type = construct which = land_fort where = 655 value = 1 }
 command = { type = construct which = land_fort where = 644 value = 1 }
 command = { type = construct which = land_fort where = 697 value = 1 }
 command = { type = construct which = land_fort where = 699 value = 1 }
@@ -2293,6 +2309,8 @@ trigger = {
 event = { id = 750391 days = 250 }
 local_flag = TRAost_const
 alliance = { country = TRA country = GER }
+control = { province = 653 data = TRA }
+control = { province = 655 data = TRA }
 control = { province = 644 data = TRA }
 control = { province = 697 data = TRA }
 control = { province = 699 data = TRA }
@@ -2319,6 +2337,8 @@ deathdate = { day = 29 month = december year = 1963 }
 
 action_a = {
 name = "Excellent!"
+command = { type = construct which = land_fort where = 653 value = 1 }
+command = { type = construct which = land_fort where = 655 value = 1 }
 command = { type = construct which = land_fort where = 644 value = 1 }
 command = { type = construct which = land_fort where = 697 value = 1 }
 command = { type = construct which = land_fort where = 699 value = 1 }
