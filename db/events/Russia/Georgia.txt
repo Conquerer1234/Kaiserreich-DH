@@ -77,6 +77,8 @@ command = { type = addclaim which = 645 }
 command = { type = addclaim which = 644 }
 command = { type = addclaim which = 642 }
 command = { type = addclaim which = 649 }
+command = { type = addclaim which = 653 }
+command = { type = addclaim which = 655 }
 command = { type = name where = GEO which = GEO_TRANSCAUCASIAN }
 command = { type = flag_ext where = GEO which = "_TRANSCAUCASIAN" }
 command = { type = domestic which = interventionism value = 2 }
@@ -1675,6 +1677,8 @@ command = { type = removeclaim   which = 702  }
 command = { type = removeclaim   which = 703  }
 command = { type = removeclaim   which = 704  }
 command = { type = removeclaim   which = 705  }
+command = { type = removeclaim   which = 653  }
+command = { type = removeclaim   which = 655  }
 command = { type = removecore   which = 693  }
 command = { type = removecore   which = 695  }
 command = { type = removecore   which = 691  }
@@ -1703,6 +1707,8 @@ command = { type = removecore   which = 702  }
 command = { type = removecore   which = 703  }
 command = { type = removecore   which = 704  }
 command = { type = removecore   which = 705  }
+command = { type = removecore   which = 653  }
+command = { type = removecore   which = 655  }
 command = { type = independence which = TRA value = 1 when = 0 }
 command = { type = make_puppet which = TRA  }
 command = { type = sleepevent which = 996134 }
@@ -1968,6 +1974,8 @@ command = { type = addcore   which = 643  }
 command = { type = addcore   which = 645  }
 command = { type = addcore   which = 642  }
 command = { type = addcore   which = 649  }
+command = { type = addcore   which = 653  }
+command = { type = addcore   which = 655  }
 command = { type = dissent value = 3 }
 command = { type = waketeam which = 21002 when = 1 } #Beriashvili Aircraft Company
 command = { type = waketeam which = 21005 } #Novorossijsk Shipyards
