@@ -271,6 +271,864 @@ command = { type = setflag which = UKR_REV }
 }
 }
 
+#### Crimea
+	event = {
+	id = 91409
+	random = no
+	country = UKR
+	picture = "Russianassault"
+
+	trigger = {
+		control = { province = 637 data = UKR }
+		control = { province = 638 data = UKR }
+		control = { province = 639 data = UKR }
+		control = { province = 640 data = UKR }
+		control = { province = 641 data = UKR }
+	}
+
+	name = "20th anniversary of the Crimean People's Republic"
+	desc = "It has been twenty years since the foundation of the Crimean People's Republic and while it was eventually absorbed into our nation, it has sparked a debate over the status of the Crimea. Many prominent Crimean Tatars and Russians in the Crimea are demanding for 'freedom and self-rule'. While an outright rejection of their demands would certainly cause issues, there is always negotiations..."
+	style = 2
+
+	date = { day = 13 month = december year = 1937 }
+	offset = 30
+	deathdate = { day = 13 month = december year = 1938 }
+
+	action_a = {
+		ai_chance = 60
+		name = "Begin negotiating with the Crimean Tatars and Russians"
+		command = { type = dissent value = 1 }
+		command = { type = trigger which = 91410 }
+	}
+	action_b = {
+		ai_chance = 40
+		name = "Never!"
+		command = { type = removecore which = 637 }
+		command = { type = removecore which = 638 }
+		command = { type = removecore which = 639 }
+		command = { type = removecore which = 640 }
+		command = { type = removecore which = 641 }
+		command = { type = province_revoltrisk which = 637 value = 50 }
+		command = { type = province_revoltrisk which = 638 value = 50 }
+		command = { type = province_revoltrisk which = 639 value = 50 }
+		command = { type = province_revoltrisk which = 640 value = 50 }
+		command = { type = province_revoltrisk which = 641 value = 50 }
+		command = { type = relation which = RUS value = -20 }
+		command = { type = relation which = OTT value = -20 }
+		command = { type = addclaim   which = 637   }
+		command = { type = addclaim   which = 638   }
+		command = { type = addclaim   which = 639   }
+		command = { type = addclaim   which = 640   }
+		command = { type = addclaim   which = 641   }
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = freedom value = -1 }
+    }
+}
+
+event = {
+	id = 91410
+	random = no
+	country = UKR
+	picture = "politics3"
+
+	name = "Negotitations with the Qurultay and Bratva"
+	desc = "The organizations representing the Crimean Tatars and Russians, the Qurultay and the Bratva, have worked out a compromise. In return for the autonomous status of the Crimean peninsula, the Tatars and Russians have agreed to fully support the Ukrainian state and participate in its defense. Shall we accept this offer?"
+	style = 2
+
+	action_a = {
+		ai_chance = 70
+		name = "Hurrah for peace!"
+		command = { type = dissent value = -2 }
+		command = { type = money value = -20 }
+		command = { type = supplies value = -200 }
+		command = { type = add_division which = "40. Devlet I Giray Diviziya" value = infantry when = 8 }
+		command = { type = add_division which = "41. Muscovy Diviziya" value = infantry when = 8 }
+		command = { type = domestic which = freedom value = 2 }
+		command = { type = sleepevent which = 91411 }
+		command = { type = sleepevent which = 91412 }
+		command = { type = sleepevent which = 91414 }
+	}
+
+	action_b = {
+		ai_chance = 30
+		name = "Negotiations? Never!"
+		command = { type = removecore which = 637 }
+		command = { type = removecore which = 638 }
+		command = { type = removecore which = 639 }
+		command = { type = removecore which = 640 }
+		command = { type = removecore which = 641 }
+		command = { type = province_revoltrisk which = 637 value = 50 }
+		command = { type = province_revoltrisk which = 638 value = 50 }
+		command = { type = province_revoltrisk which = 639 value = 50 }
+		command = { type = province_revoltrisk which = 640 value = 50 }
+		command = { type = province_revoltrisk which = 641 value = 50 }
+		command = { type = relation which = RUS value = -20 }
+		command = { type = relation which = OTT value = -20 }
+		command = { type = addclaim   which = 637   }
+		command = { type = addclaim   which = 638   }
+		command = { type = addclaim   which = 639   }
+		command = { type = addclaim   which = 640   }
+		command = { type = addclaim   which = 641   }
+		command = { type = dissent value = 5 }
+		command = { type = domestic which = freedom value = -1 }
+    }
+}
+
+event = {
+	id = 91411
+	random = no
+	country = UKR
+	style = 2
+
+	trigger = {
+		event = 91409
+		control = { province = 637 data = UKR }
+		control = { province = 638 data = UKR }
+		control = { province = 639 data = UKR }
+		control = { province = 640 data = UKR }
+		control = { province = 641 data = UKR }
+	}
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 300
+	deathdate = { day = 29 month = december year = 1963 }
+
+	name = "Crimean peninsula subjugated!"
+	desc = "After a long and bloody contest in the mountainous parts of Crimea we have finally subdued both the Tatar and Russian minorities. At least for now......"
+	picture = "militaryparade1"
+
+	action_a = {
+		name = "They will trouble us no more!"
+		command = { type = province_revoltrisk which = 637 value = -50 }
+		command = { type = province_revoltrisk which = 638 value = -50 }
+		command = { type = province_revoltrisk which = 639 value = -50 }
+		command = { type = province_revoltrisk which = 640 value = -50 }
+		command = { type = province_revoltrisk which = 641 value = -50 }
+		command = { type = dissent value = -5 }
+		command = { type = addcore   which = 637   }
+		command = { type = addcore   which = 638   }
+		command = { type = addcore   which = 639   }
+		command = { type = addcore   which = 640   }
+		command = { type = addcore   which = 641   }
+	}
+}
+
+event = {
+	id = 91412
+	random = no
+	country = RUS
+	style = 2
+
+	trigger = {
+		event = 91409
+		control = { province = 694 data = RUS }
+		control = { province = 553 data = RUS }
+		control = { province = 572 data = RUS }
+		control = { province = 691 data = RUS }
+		NOT = {
+			exists = SOV
+			exists = TRA
+			alliance = { country = RUS country = UKR }
+			war = { country = RUS country = UKR }
+			puppet = { country = UKR country = RUS  }
+		}
+		owned = { province = 637 data = UKR }
+		owned = { province = 638 data = UKR }
+		owned = { province = 639 data = UKR }
+		owned = { province = 640 data = UKR }
+		owned = { province = 641 data = UKR }
+		control = { province = 637 data = UKR }
+		control = { province = 638 data = UKR }
+		control = { province = 639 data = UKR }
+		control = { province = 640 data = UKR }
+		control = { province = 641 data = UKR }
+	}
+
+	name = "General unrest in Crimea!"
+	desc = "The Ukrainian government has proved itself unable to handle th growing nationalist unrest in the Crimean peninsula.  We have received word that many local leaders want to secede and join Russia! There may be international complications, but we may never get another opportunity like this!"
+	picture = "militaryparade1"    
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 20
+	deathdate = { day = 1 month = december year = 1960 }
+
+	action_a = {
+
+	ai_chance = 70
+		name = "Claim Crimea!"
+		command = { type = belligerence which = RUS value = 6  }
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = dissent value = 3 }  ## Reflects difficulty of integrating new territory
+		command = { type = addcore   which = 637   }
+		command = { type = addcore   which = 638   }
+		command = { type = addcore   which = 639   }
+		command = { type = addcore   which = 640   }
+		command = { type = addcore   which = 641   }
+		command = { type = trigger which = 91413 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "This is a bit risky..."
+		command = { type = domestic which = interventionism value = -2 }
+		command = { type = relation which = UKR value = 60 }
+	}
+}
+
+event = {
+	id = 91413
+	random = no
+	country = UKR
+	style = 2
+
+
+	name = "Russia makes its Move!"
+	desc = "Russia has taken advantage of the general unrest in Crimea to establish its control over the region.  While this is a great infringement on our sovereignty, we are currently weak and may not be able to win a war to reclaim our lands..."
+	picture = "militaryparade1"
+
+	action_a = {
+		ai_chance = 85
+		name =  "It is no use fighting over Crimea"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 6 }
+		command = { type = secedeprovince which = RUS value = 637  }
+		command = { type = secedeprovince which = RUS value = 638  }
+		command = { type = secedeprovince which = RUS value = 639  }
+		command = { type = secedeprovince which = RUS value = 640  }
+		command = { type = secedeprovince which = RUS value = 641  }
+		command = { type = addcore   which = 637   }
+		command = { type = addcore   which = 638   }
+		command = { type = addcore   which = 639   }
+		command = { type = addcore   which = 640   }
+		command = { type = addcore   which = 641   }
+	}
+	action_b = {
+		ai_chance = 15
+		name = "What!? Crimea shall always belong to Ukraine!"
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = secedeprovince which = RUS value = 637  }
+		command = { type = secedeprovince which = RUS value = 638  }
+		command = { type = secedeprovince which = RUS value = 639  }
+		command = { type = secedeprovince which = RUS value = 640  }
+		command = { type = secedeprovince which = RUS value = 641  }
+		command = { type = war which = RUS }
+		command = { type = addcore   which = 637   }
+		command = { type = addcore   which = 638   }
+		command = { type = addcore   which = 639   }
+		command = { type = addcore   which = 640   }
+		command = { type = addcore   which = 641   }
+	}
+}
+
+event = {
+	id = 91414
+	random = no
+	country = TRA
+	style = 2
+
+	trigger = {
+		event = 91409
+		control = { province = 694 data = TRA }
+		control = { province = 691 data = TRA }
+		NOT = {
+			alliance = { country = TRA country = UKR }
+			war = { country = TRA country = UKR }
+			war = { country = TRA country = RUS }
+			war = { country = TRA country = GEO }
+			puppet = { country = UKR country = TRA  }
+			ispuppet = TRA
+		}
+		owned = { province = 637 data = UKR }
+		owned = { province = 638 data = UKR }
+		owned = { province = 639 data = UKR }
+		owned = { province = 640 data = UKR }
+		owned = { province = 641 data = UKR }
+		control = { province = 637 data = UKR }
+		control = { province = 638 data = UKR }
+		control = { province = 639 data = UKR }
+		control = { province = 640 data = UKR }
+		control = { province = 641 data = UKR }
+	}
+
+	name = "General unrest in Crimea!"
+	desc = "The Ukrainian government has proved itself unable to handle the growing nationalist unrest in the Crimean peninsula.  We have received word that many local leaders want to secede and join Russia! There may be international complications, but we may never get another opportunity like this!"
+	picture = "militaryparade1"
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 50
+	deathdate = { day = 1 month = december year = 1960 }
+
+	action_a = {
+		ai_chance = 0
+		name = "Claim Crimea!"
+		command = { type = belligerence which = TRA value = 10  }
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = dissent value = 5 }  ## Reflects difficulty of integrating new territory
+		command = { type = addcore   which = 637   }
+		command = { type = addcore   which = 638   }
+		command = { type = addcore   which = 639   }
+		command = { type = addcore   which = 640   }
+		command = { type = addcore   which = 641   }
+		command = { type = trigger which = 91415 }
+	}
+	action_b = {
+		ai_chance = 100
+		name = "This is a bit risky..."
+		command = { type = domestic which = interventionism value = -2 }
+		command = { type = relation which = UKR value = 60 }
+	}
+}
+
+event = {
+	id = 91415
+	random = no
+	country = UKR
+	style = 2
+
+
+	name = "Don-Kuban makes its Move!"
+	desc = "Don-Kuban cossacks have taken advantage of the general unrest in Crimea to establish its control over the region.  While this is a great infringement on our sovereignty, we are currently weak and may not be able to win a war to reclaim our lands..."
+	picture = "militaryparade1"
+
+
+
+	action_a = {
+		ai_chance = 70
+		name =  "It is no use fighting over Crimea"
+		command = { type = domestic which = interventionism value = -1 }
+		command = { type = dissent value = 6 }
+		command = { type = secedeprovince which = TRA value = 637  }
+		command = { type = secedeprovince which = TRA value = 638  }
+		command = { type = secedeprovince which = TRA value = 639  }
+		command = { type = secedeprovince which = TRA value = 640  }
+		command = { type = secedeprovince which = TRA value = 641  }
+		command = { type = addcore   which = 637 }
+		command = { type = addcore   which = 638 }
+		command = { type = addcore   which = 639 }
+		command = { type = addcore   which = 640 }
+		command = { type = addcore   which = 641 }
+	}
+	action_b = {
+		ai_chance = 30
+		name = "What!? Crimea shall always belong to Ukraine!"
+		command = { type = domestic which = interventionism value = 2 }
+		command = { type = secedeprovince which = TRA value = 637  }
+		command = { type = secedeprovince which = TRA value = 638  }
+		command = { type = secedeprovince which = TRA value = 639  }
+		command = { type = secedeprovince which = TRA value = 640  }
+		command = { type = secedeprovince which = TRA value = 641  }
+		command = { type = war which = TRA }
+		command = { type = addcore   which = 637 }
+		command = { type = addcore   which = 638 }
+		command = { type = addcore   which = 639 }
+		command = { type = addcore   which = 640 }
+		command = { type = addcore   which = 641 }
+	}
+}
+
+event = {
+    id = 91416
+    random = no
+    country = RUS
+    style = 2
+
+    
+    trigger = {
+		NOT = {
+			core = { province = 641 data = RUS }
+		}
+		exists = UKR
+		owned = { province = 641 data = RUS }
+		control = { province = 641 data = RUS }
+	}
+    name = "Integration of Crimea"
+    desc = "The entire Crimean peninsula with its sizable Russian minority has been successfully integrated into Mother Russia."
+
+    picture = "militaryparade1"
+
+
+	date = { day = 1 month = january year = 1936 }
+	offset = 100  
+	deathdate = { day = 1 month = january year = 1960 }
+
+	action_a = {
+		name = "Great!"
+		command = { type = addcore which = 637 }
+		command = { type = addcore which = 638 }
+		command = { type = addcore which = 639 }
+		command = { type = addcore which = 640 }
+		command = { type = addcore which = 641 }
+		command = { type = dissent value = 1 }
+	}
+}
+
+
+
+
+################################
+# Extending Ostwall
+################################
+event = {
+	id = 91418
+	random = no
+	country = UKR
+        save_date = yes
+
+	decision = { 
+        alliance = { country = UKR country = GER }
+        OR = {
+        AND = {
+        exists = RUS
+        owned = { province = 553 data = RUS }
+	owned = { province = 572 data = RUS }
+        owned = { province = 1162 data = RUS }
+	control = { province = 553 data = RUS } 
+	control = { province = 572 data = RUS } 
+        control = { province = 1162 data = RUS } 
+        NOT = {
+        exists = SOV
+        flag = RUS_ISO
+        alliance = { country = UKR country = RUS }
+        ispuppet = RUS
+        exists = SIB
+        exists = U13
+        }
+        }
+        AND = {
+        exists = SOV
+        owned = { province = 553 data = SOV }
+	owned = { province = 572 data = SOV }
+        owned = { province = 1162 data = SOV }
+	control = { province = 553 data = SOV } 
+	control = { province = 572 data = SOV } 
+        control = { province = 1162 data = SOV } 
+        NOT = {
+        exists = RUS
+        flag = SOV_ISO
+        alliance = { country = UKR country = SOV }
+        ispuppet = SOV
+        exists = SIB
+        exists = U13
+        }
+        }
+        }
+	NOT = {
+        atwar = UKR
+        ispuppet = UKR
+        }
+	}
+
+	decision_trigger = {
+        control = { province = 633 data = UKR } 
+  	control = { province = 634 data = UKR } 
+  	control = { province = 635 data = UKR } 
+  	control = { province = 648 data = UKR }
+    control = { province = 646 data = UKR }
+	control = { province = 587 data = UKR }
+	control = { province = 601 data = UKR }
+	control = { province = 603 data = UKR }
+  	control = { province = 605 data = UKR } 
+  	control = { province = 606 data = UKR } 
+  	control = { province = 607 data = UKR } 
+  	control = { province = 631 data = UKR } 
+	}
+
+	trigger = {
+        alliance = { country = UKR country = GER }
+	OR = {
+        AND = {
+        exists = RUS
+        owned = { province = 553 data = RUS }
+	owned = { province = 572 data = RUS }
+        owned = { province = 1162 data = RUS }
+	control = { province = 553 data = RUS } 
+	control = { province = 572 data = RUS } 
+        control = { province = 1162 data = RUS } 
+        NOT = {
+        exists = SOV
+        flag = RUS_ISO
+        alliance = { country = UKR country = RUS }
+        ispuppet = RUS
+        exists = SIB
+        exists = U13
+        }
+        }
+        AND = {
+        exists = SOV
+        owned = { province = 553 data = SOV }
+	owned = { province = 572 data = SOV }
+        owned = { province = 1162 data = SOV }
+	control = { province = 553 data = SOV } 
+	control = { province = 572 data = SOV } 
+        control = { province = 1162 data = SOV } 
+        NOT = {
+        exists = RUS
+        flag = SOV_ISO
+        alliance = { country = UKR country = SOV }
+        ispuppet = SOV
+        exists = SIB
+        exists = U13
+        }
+        }
+        }
+	NOT = {
+        atwar = UKR
+        ispuppet = UKR
+        }
+        control = { province = 633 data = UKR } 
+  	control = { province = 634 data = UKR } 
+  	control = { province = 635 data = UKR }
+	control = { province = 636 data = UKR }
+	control = { province = 648 data = UKR }
+    control = { province = 646 data = UKR }
+	control = { province = 587 data = UKR }
+	control = { province = 601 data = UKR }
+	control = { province = 603 data = UKR }	
+  	control = { province = 636 data = UKR } 
+  	control = { province = 605 data = UKR } 
+  	control = { province = 606 data = UKR } 
+  	control = { province = 607 data = UKR } 
+  	control = { province = 631 data = UKR } 
+	}
+   
+	name = "Ostwall fortification program"
+	desc = "With Russian armed forces emerging from previous years of neglect as fearsome force it is high time for us to improve our weak border defences. Our top military leaders propose to solve this situation via improving existing net of fortifications along borders with Russia, known as Ostwall. Once finished, such massive fortifications will surely stop any kind of Russian assault." 
+	style = 2
+	picture = "Ostwall"
+	decision_picture = "decision_ostwall"
+
+	date = { day = 1 month = july year = 1937 }
+	offset = 40
+	deathdate = { day = 29 month = december year = 1963 }
+
+	action = {
+		name = "Launch Ostwall fortification program!"
+                ai_chance = 90
+		command = { trigger = { ai = no } type = money value = -200 }
+		command = { trigger = { ai = no } type = metalpool value = -1500 }
+                command = { type = local_setflag which = UKRost_const }
+	}
+
+        action = {
+		name = "This is not needed..."
+                ai_chance = 10
+		command = {  } 
+	}
+}
+
+
+
+
+event = {
+id = 91419
+random = no
+country = UKR
+style = 2
+save_date = yes
+picture = "Ostwall"
+
+
+trigger = {
+  event = { id = 91418 days = 250 } 
+  local_flag = UKRost_const
+  alliance = { country = UKR country = GER }
+  control = { province = 633 data = UKR } 
+  control = { province = 634 data = UKR } 
+  control = { province = 635 data = UKR }
+  control = { province = 636 data = UKR }
+  control = { province = 648 data = UKR }
+  control = { province = 646 data = UKR }
+  control = { province = 587 data = UKR }
+  control = { province = 601 data = UKR }
+  control = { province = 603 data = UKR }  
+  control = { province = 636 data = UKR } 
+  control = { province = 605 data = UKR } 
+  control = { province = 606 data = UKR } 
+  control = { province = 607 data = UKR } 
+  control = { province = 631 data = UKR } 
+  OR = {
+        exists = RUS
+        exists = SOV
+  }
+  NOT = {
+        alliance = { country = UKR country = SOV }
+        alliance = { country = UKR country = RUS }
+        ispuppet = UKR
+        }
+}
+
+name = "Improving Ostwall"
+desc = "Our dilligent engineers and soldiers have completed another part of fortification line along borders of Ukraine with Russia. Shall we continue with its expansion or are such fortifications sufficient ?"
+
+date = { day = 1 month = january year = 1936 }
+offset = 40
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Further improve our defenses !"
+ai_chance = 100
+command = { type = construct which = land_fort where = 633 value = 1 } 
+command = { type = construct which = land_fort where = 634 value = 1 } 
+command = { type = construct which = land_fort where = 635 value = 1 } 
+command = { type = construct which = land_fort where = 636 value = 1 }
+command = { type = construct which = land_fort where = 603 value = 1 }
+command = { type = construct which = land_fort where = 646 value = 1 }
+command = { type = construct which = land_fort where = 648 value = 1 }
+command = { type = construct which = land_fort where = 587 value = 1 }
+command = { type = construct which = land_fort where = 601 value = 1 } 
+command = { type = construct which = land_fort where = 605 value = 1 } 
+command = { type = construct which = land_fort where = 606 value = 1 } 
+command = { type = construct which = land_fort where = 607 value = 1 } 
+command = { type = construct which = land_fort where = 631 value = 1 } 
+command = { trigger = { ai = no } type = money value = -200 }
+command = { trigger = { ai = no } type = metalpool value = -1500 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+}
+
+action_b = {
+name = "This is not needed..."
+ai_chance = 0
+command = { type = local_clrflag which = UKRost_const }
+}
+}
+
+
+
+event = {
+id = 91420
+random = no
+country = UKR
+style = 2
+save_date = yes
+picture = "Ostwall"
+
+
+trigger = {
+  event = { id = 91419 days = 250 } 
+  local_flag = UKRost_const
+  alliance = { country = UKR country = GER }
+  control = { province = 633 data = UKR } 
+  control = { province = 634 data = UKR } 
+  control = { province = 635 data = UKR }
+  control = { province = 636 data = UKR }
+  control = { province = 648 data = UKR }
+  control = { province = 646 data = UKR }
+  control = { province = 587 data = UKR }
+  control = { province = 601 data = UKR }
+  control = { province = 603 data = UKR } 
+  control = { province = 605 data = UKR } 
+  control = { province = 606 data = UKR } 
+  control = { province = 607 data = UKR } 
+  control = { province = 631 data = UKR } 
+  OR = {
+        exists = RUS
+        exists = SOV
+  }
+  NOT = {
+        alliance = { country = UKR country = SOV }
+        alliance = { country = UKR country = RUS }
+        ispuppet = UKR
+        }
+}
+
+name = "Improving Ostwall"
+desc = "Our dilligent engineers and soldiers have completed another part of fortification line along borders of Ukraine with Russia. Shall we continue with its expansion or are such fortifications sufficient ?"
+
+date = { day = 1 month = january year = 1936 }
+offset = 40
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Further improve our defenses !"
+ai_chance = 80
+command = { type = construct which = land_fort where = 633 value = 1 } 
+command = { type = construct which = land_fort where = 634 value = 1 } 
+command = { type = construct which = land_fort where = 635 value = 1 } 
+command = { type = construct which = land_fort where = 636 value = 1 }
+command = { type = construct which = land_fort where = 603 value = 1 }
+command = { type = construct which = land_fort where = 646 value = 1 }
+command = { type = construct which = land_fort where = 648 value = 1 }
+command = { type = construct which = land_fort where = 587 value = 1 }
+command = { type = construct which = land_fort where = 601 value = 1 } 
+command = { type = construct which = land_fort where = 605 value = 1 } 
+command = { type = construct which = land_fort where = 606 value = 1 } 
+command = { type = construct which = land_fort where = 607 value = 1 } 
+command = { type = construct which = land_fort where = 631 value = 1 } 
+command = { trigger = { ai = no } type = money value = -200 }
+command = { trigger = { ai = no } type = metalpool value = -1500 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+}
+
+action_b = {
+name = "This is not needed..."
+ai_chance = 20
+command = { type = local_clrflag which = UKRost_const }
+}
+}
+
+
+event = {
+id = 91421
+random = no
+country = UKR
+style = 2
+save_date = yes
+picture = "Ostwall"
+
+
+trigger = {
+  event = { id = 91420 days = 250 } 
+  local_flag = UKRost_const
+  alliance = { country = UKR country = GER }
+  control = { province = 633 data = UKR } 
+  control = { province = 634 data = UKR } 
+  control = { province = 635 data = UKR }
+  control = { province = 636 data = UKR }
+  control = { province = 648 data = UKR }
+  control = { province = 646 data = UKR }
+  control = { province = 587 data = UKR }
+  control = { province = 601 data = UKR }
+  control = { province = 603 data = UKR }
+  control = { province = 605 data = UKR } 
+  control = { province = 606 data = UKR } 
+  control = { province = 607 data = UKR } 
+  control = { province = 631 data = UKR } 
+  OR = {
+        exists = RUS
+        exists = SOV
+  }
+  NOT = {
+        alliance = { country = UKR country = SOV }
+        alliance = { country = UKR country = RUS }
+        ispuppet = UKR
+        }
+}
+
+name = "Improving Ostwall"
+desc = "Our dilligent engineers and soldiers have completed another part of fortification line along borders of Ukraine with Russia. Shall we continue with its expansion or are such fortifications sufficient ?"
+
+date = { day = 1 month = january year = 1936 }
+offset = 40
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Further improve our defenses !"
+ai_chance = 50
+command = { type = construct which = land_fort where = 633 value = 1 } 
+command = { type = construct which = land_fort where = 634 value = 1 } 
+command = { type = construct which = land_fort where = 635 value = 1 } 
+command = { type = construct which = land_fort where = 636 value = 1 }
+command = { type = construct which = land_fort where = 603 value = 1 }
+command = { type = construct which = land_fort where = 646 value = 1 }
+command = { type = construct which = land_fort where = 648 value = 1 }
+command = { type = construct which = land_fort where = 587 value = 1 }
+command = { type = construct which = land_fort where = 601 value = 1 }  
+command = { type = construct which = land_fort where = 605 value = 1 } 
+command = { type = construct which = land_fort where = 606 value = 1 } 
+command = { type = construct which = land_fort where = 607 value = 1 } 
+command = { type = construct which = land_fort where = 631 value = 1 } 
+command = { type = construct which = land_fort where = 609 value = 1 } 
+command = { type = construct which = land_fort where = 617 value = 1 } 
+command = { type = construct which = land_fort where = 613 value = 1 } 
+command = { type = construct which = land_fort where = 628 value = 1 } 
+command = { type = construct which = land_fort where = 622 value = 1 } 
+command = { type = construct which = land_fort where = 627 value = 1 } 
+command = { type = construct which = land_fort where = 623 value = 1 } 
+command = { trigger = { ai = no } type = money value = -250 }
+command = { trigger = { ai = no } type = metalpool value = -1700 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+command = { type = dissent value = 3 }
+}
+
+action_b = {
+name = "This is not needed..."
+ai_chance = 50
+command = { type = local_clrflag which = UKRost_const }
+command = { type = dissent value = -3 }
+}
+}
+
+
+
+event = {
+id = 91422
+random = no
+country = UKR
+style = 2
+picture = "Ostwall"
+
+
+trigger = {
+  event = { id = 91421 days = 250 } 
+  local_flag = UKRost_const
+  alliance = { country = UKR country = GER }
+  control = { province = 633 data = UKR } 
+  control = { province = 634 data = UKR } 
+  control = { province = 635 data = UKR }
+  control = { province = 636 data = UKR }
+  control = { province = 648 data = UKR }
+  control = { province = 646 data = UKR }
+  control = { province = 587 data = UKR }
+  control = { province = 601 data = UKR }
+  control = { province = 603 data = UKR } 
+  control = { province = 605 data = UKR } 
+  control = { province = 606 data = UKR } 
+  control = { province = 607 data = UKR } 
+  control = { province = 631 data = UKR } 
+  OR = {
+        exists = RUS
+        exists = SOV
+  }
+  NOT = {
+        alliance = { country = UKR country = SOV }
+        alliance = { country = UKR country = RUS }
+        ispuppet = UKR
+        }
+}
+
+name = "Ostwall fortification program completed"
+desc = "Our dilligent engineers and soldiers have completed fortification line along borders of Ukraine with Russia. With such protections in place, our independence is secured."
+
+date = { day = 1 month = january year = 1936 }
+offset = 40
+deathdate = { day = 29 month = december year = 1963 }
+
+action_a = {
+name = "Excellent !"
+command = { type = construct which = land_fort where = 633 value = 1 } 
+command = { type = construct which = land_fort where = 634 value = 1 } 
+command = { type = construct which = land_fort where = 635 value = 1 } 
+command = { type = construct which = land_fort where = 636 value = 1 }
+command = { type = construct which = land_fort where = 603 value = 1 }
+command = { type = construct which = land_fort where = 646 value = 1 }
+command = { type = construct which = land_fort where = 648 value = 1 }
+command = { type = construct which = land_fort where = 587 value = 1 }
+command = { type = construct which = land_fort where = 601 value = 1 } 
+command = { type = construct which = land_fort where = 605 value = 1 } 
+command = { type = construct which = land_fort where = 606 value = 1 } 
+command = { type = construct which = land_fort where = 607 value = 1 } 
+command = { type = construct which = land_fort where = 631 value = 1 } 
+command = { type = construct which = land_fort where = 609 value = 1 } 
+command = { type = construct which = land_fort where = 617 value = 1 } 
+command = { type = construct which = land_fort where = 613 value = 1 } 
+command = { type = construct which = land_fort where = 628 value = 1 } 
+command = { type = construct which = land_fort where = 622 value = 1 } 
+command = { type = construct which = land_fort where = 627 value = 1 } 
+command = { type = construct which = land_fort where = 623 value = 1 } 
+command = { trigger = { ai = no } type = money value = -250 }
+command = { trigger = { ai = no } type = metalpool value = -1700 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+command = { trigger = { ai = UKR NOT = { ai = RUS } } type = add_division value = infantry when = 9 }
+command = { type = local_clrflag which = UKRost_const }
+}
+}
+
 ##################
 ##Hetman#######
 ##########
